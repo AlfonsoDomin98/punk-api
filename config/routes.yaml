@@ -1,3 +1,7 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+basic_beer:
+    path: /basic/beer/
+    controller: App\Controller\BeerController::getBasicBeerAction
+
+complete_beer:
+    path: /complete/beer/
+    controller: App\Controller\BeerController::getCompleteBeerAction
