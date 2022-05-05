@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Beer
 {
+
     /**
      * @var int
      */
@@ -39,6 +40,13 @@ class Beer
      * @var string
      */
     private $firstBrewed;
+
+    public function __construct(int $id, string $name, string $description)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->description = $description;
+    }
 
     /**
      * @return int
@@ -76,7 +84,7 @@ class Beer
     /**
      * @return string
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
@@ -92,7 +100,7 @@ class Beer
     /**
      * @return string
      */
-    public function getImage(): string
+    public function getImage(): ?string
     {
         return $this->image;
     }
@@ -108,7 +116,7 @@ class Beer
     /**
      * @return string
      */
-    public function getTagLine(): string
+    public function getTagLine(): ?string
     {
         return $this->tagLine;
     }
@@ -124,7 +132,7 @@ class Beer
     /**
      * @return string
      */
-    public function getFirstBrewed(): string
+    public function getFirstBrewed(): ?string
     {
         return $this->firstBrewed;
     }
