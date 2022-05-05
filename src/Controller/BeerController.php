@@ -43,8 +43,6 @@ class BeerController extends AbstractController
 
         $food = $this->beerService->getCompleteBeer($food);
 
-        $food = $this->beerService->getBasicBeer($food);
-
         return $this->json($food);
     }
 }

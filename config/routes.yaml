@@ -1,7 +1,7 @@
 basic_beer:
-    path: /basic/beer/
+    path: /beer/basic
     controller: App\Controller\BeerController::getBasicBeerAction
 
 complete_beer:
-    path: /complete/beer/
+    path: /beer/complete
     controller: App\Controller\BeerController::getCompleteBeerAction
