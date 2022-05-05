@@ -3,6 +3,7 @@
 namespace App\Invoker;
 
 use GuzzleHttp\Client;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class BeerInvoker
 {
@@ -19,15 +20,11 @@ class BeerInvoker
     /**
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getBeer(string $id): string
+    public function getBeer(string $food): string
     {
         $remoteApiUrl = $this->url.$this->remotePath;
 
-        $response = $this->client->get($remoteApiUrl.'?food='.$id);
-
-        if($response->getStatusCode() !== 200 ){
-            throw new \DomainException();
-        }
+        $response = $this->client->get($remoteApiUrl.'?food='.$food);
 
         return $response->getBody()->getContents();
 

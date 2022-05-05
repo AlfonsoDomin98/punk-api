@@ -19,6 +19,7 @@ class BeerReader
         $beer = $this->createBeerByResponse($arrayResponse);
 
         $beer->setFirstBrewed($arrayResponse[0]['first_brewed']);
+        $beer->setTagLine($arrayResponse[0]['tagline']);
         $img = $arrayResponse[0]['image_url'];
 
         if(empty($img)){
